@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import system.helpers.DriverManager;
 import system.pages.MainPage;
 import system.pages.MenuUolPage;
+import system.pages.ValorAssinaturaPage;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -36,6 +37,10 @@ public class StepDefinitions {
     }
 
     MenuUolPage menu = new MenuUolPage();
+    ValorAssinaturaPage valorAssinaturaPage = new ValorAssinaturaPage();
+
+
+    ///***Cenarios***
 
     @Dado("que estou na tela inicial do UOL Notícias")
     public void queEstouNaTelaInicialDoUOLNotícias() {
@@ -114,7 +119,7 @@ public class StepDefinitions {
 
     @Então("devo visualizar a assinatura promocional a {string}")
     public void devoVisualizarAAssinaturaPromocionalA(String string) {
-        String valor = menu.GetValorAssinatura();
+        String valor = valorAssinaturaPage.GetValorAssinatura();
         assertEquals(valor, string, "Valor diferente do plano");
     }
 
