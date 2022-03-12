@@ -1,9 +1,9 @@
 #language: pt
 
-Funcionalidade: Selenium Easy
+Funcionalidade: Avaliacao da disciplina de Testes de Sistemas
 
   @ts21
-  Cenario: Atividade 27
+  Cenario: Atividade 01
     Dado que o usuário acessou a página Selenium Easy
     Quando o usuário acessa a tabela de Search Demo
     E pesquisa pelo nome "<A Cox>"
