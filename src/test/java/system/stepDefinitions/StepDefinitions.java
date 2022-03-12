@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import system.helpers.DriverManager;
 import system.pages.MainPage;
+import system.pages.MenuUolPage;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -33,6 +34,8 @@ public class StepDefinitions {
         System.out.println("After");
         DriverManager.quitDriver();
     }
+
+    MenuUolPage menu = new MenuUolPage();
 
     @Dado("que estou na tela inicial do UOL Notícias")
     public void queEstouNaTelaInicialDoUOLNotícias() {
@@ -106,17 +109,14 @@ public class StepDefinitions {
 
     @Quando("Verifico o valor da assinatura da pagina")
     public void verificoOValorDaAssinaturaDaPagina() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        menu.ClicaAbaProdutos();
     }
+
     @Então("devo visualizar a assinatura promocional a {string}")
     public void devoVisualizarAAssinaturaPromocionalA(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        String valor = menu.GetValorAssinatura();
+        assertEquals(valor, string, "Valor diferente do plano");
     }
-
-
-
 
 
 
