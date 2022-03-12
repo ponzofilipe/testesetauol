@@ -17,11 +17,10 @@ public class MenuUolPage {
 
     //****Locators****
     private By AbaProdutos = By.cssSelector("#app > div > header > nav > ul > li.menuDesktop__item.menuDesktop__item--produtos > a > span.menuDesktop__link__title");
-    private By AbaBatePapo = By.cssSelector("#app > div > header > nav > ul > li.menuDesktop__item.menuDesktop__item--produtos > a > span.menuDesktop__link__title");
-    private By AbaSalas = By.cssSelector("#conteudo-exclusivo > section.top > div > div > div.item.destaque > div.price_plan");
-    private By MenuSalas = By.cssSelector("#conteudo-exclusivo > section.top > div > div > div.item.destaque > div.price_plan");
-    private By Salas = By.cssSelector("#conteudo-exclusivo > section.top > div > div > div.item.destaque > div.price_plan");
-    private By SalasCategorias = By.cssSelector("#conteudo-exclusivo > section.top > div > div > div.item.destaque > div.price_plan");
+    private By AbaBatePapo = By.cssSelector("#app > div > div.blackBar > div > ul.blackBar__listProducts > li:nth-child(2) > a");
+    private By MenuSalas = By.cssSelector("#root > header > div:nth-child(3) > div.sc-giIncl.gHUUHu > ul > li:nth-child(1) > a");
+    private By Salas = By.cssSelector("#root > section > div > div:nth-child(3) > section.sc-czgevV.giohnb > div:nth-child(1) > div.sc-bQVmPH.cROQXQ > div > h3");
+    private By SalasCategorias = By.cssSelector("#root > section > div > div:nth-child(3) > section.sc-kMOkjD.jZjyro > h2 > div");
 
     public void ClicaAbaProdutos(){
         driver.findElement(AbaProdutos).click();
