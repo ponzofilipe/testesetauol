@@ -28,13 +28,6 @@ public class MainPage {
 
     public MainPage acessar() {
         this.driver.get(SELENIUM_EASY_MAIN_PAGE);
-
-        try {
-            this.closePopup();
-        } catch (Exception e) {
-            // nada
-        }
-
         return this;
     }
 

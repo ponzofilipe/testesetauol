@@ -34,49 +34,90 @@ public class StepDefinitions {
         DriverManager.quitDriver();
     }
 
-    @Dado("que o usuário acessou a página Selenium Easy")
-    public void que_o_usuário_acessou_a_página_selenium_easy() {
+    @Dado("que estou na tela inicial do UOL Notícias")
+    public void queEstouNaTelaInicialDoUOLNotícias() {
         MainPage page = new MainPage();
         page.acessar();
     }
-
-    @Quando("o usuário acessa a tabela de Search Demo")
-    public void o_usuário_acessa_a_tabela_de_search_demo() {
-        WebElement botaoTableMenu = driver.findElement(By.cssSelector("#navbar-brand-centered > ul:nth-child(1) > li:nth-child(2) > a"));
-        wait.until(ExpectedConditions.presenceOfElementLocated((By) botaoTableMenu));
-        botaoTableMenu.click();
-
-        WebElement botaoSubMenu = driver.findElement(By.cssSelector("#navbar-brand-centered > ul:nth-child(1) > li.dropdown.open > ul > li:nth-child(4) > a"));
-        botaoSubMenu.click();
-
-        // Clicar no botão Table sort and Search
-        By botaoTableSortSearchSeletor = By.cssSelector(".dropdown-menu > li:nth-child(4)");
-        wait.until(ExpectedConditions.presenceOfElementLocated(botaoTableSortSearchSeletor));
-
-        WebElement botaoTableSortSearch = botaoTableMenu.findElement(botaoTableSortSearchSeletor);
-        botaoTableSortSearch.click();
+    @Quando("realiza o busca pelo conteúdo {string}")
+    public void realizaOBuscaPeloConteúdo(String string) {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
     }
-    @Quando("pesquisa pelo nome {string}")
-    public void pesquisa_pelo_nome(String string) {
-        // Digitar um texto no campo de busca da tabela
-        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector("#example")));
-        By seletorSearchInput = By.cssSelector("#example_filter input");
-        driver.findElement(seletorSearchInput).sendKeys(string);
+    @Então("exibe tela com o resultado da busca")
+    public void exibeTelaComOResultadoDaBusca() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
     }
-    @Então("devo visualizar o nome {string} na tabela")
-    public void devo_visualizar_o_nome_na_tabela(String string) {
-        // Aguardar a tabela ser filtrada
-        By seletorMensagemShowing = By.cssSelector("#example_info");
-        wait.until(ExpectedConditions.textToBePresentInElementLocated(seletorMensagemShowing, "filtered"));
 
-        // Validar a quantidade de linhas pós filtragem
-        String nomeTabela = driver.findElement(By.cssSelector("#example > tbody > tr > td.sorting_1")).getText();
-        //int quantidadeRealLinhasTabela = driver.findElements(By.cssSelector("#example tbody tr")).size();
 
-        assertEquals(
-                nomeTabela,
-                "A. Cox",
-                "Nome não existe na tebela");
+
+
+    @Quando("preencho o formulário de {string}")
+    public void preenchoOFormulárioDe(String string) {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
     }
+    @Então("exibe na tela mensagem de sucesso")
+    public void exibeNaTelaMensagemDeSucesso() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+
+
+
+    @Quando("altero a previsão do tempo para a cidade {string}")
+    public void alteroAPrevisãoDoTempoParaACidade(String string) {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+    @Então("exibe a previsão do tempo de {string}")
+    public void exibeAPrevisãoDoTempoDe(String string) {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+
+
+
+
+    @Quando("seleciono area do bate-papo uol")
+    public void selecionoAreaDoBatePapoUol() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+    @Quando("seleciono salas")
+    public void selecionoSalas() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+    @Então("exibe salas disponiveis")
+    public void exibeSalasDisponiveis() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+    @Então("categorias")
+    public void categorias() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+
+
+
+
+    @Quando("Verifico o valor da assinatura da pagina")
+    public void verificoOValorDaAssinaturaDaPagina() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+    @Então("devo visualizar a assinatura promocional a {string}")
+    public void devoVisualizarAAssinaturaPromocionalA(String string) {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+
+
+
+
+
 
 }
