@@ -90,23 +90,21 @@ public class StepDefinitions {
 
     @Quando("seleciono area do bate-papo uol")
     public void selecionoAreaDoBatePapoUol() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        menu.ClicaAbaBatePapo();
     }
     @Quando("seleciono salas")
     public void selecionoSalas() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        menu.ClicaAreaSalas();
     }
     @Então("exibe salas disponiveis")
     public void exibeSalasDisponiveis() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        String salasbatepapo = menu.GetVerificaSalas();
+        assertEquals(salasbatepapo, "Camarote", "Valor diferente do plano");
     }
     @Então("categorias")
     public void categorias() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        String categoriabbb = menu.GetVerificaSalasCategorias();
+        assertEquals(categoriabbb, "Big Brother 22", "Valor diferente do plano");
     }
 
 
