@@ -2,6 +2,7 @@ package system.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import system.helpers.DriverManager;
 
@@ -14,8 +15,13 @@ public class MenuUolPage {
         this.driver = DriverManager.getDriver();
         this.wait = DriverManager.getDriverWait();
     }
+    public void closePopupBatePapo() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(learnSeleniumPopup));
+        driver.findElement(learnSeleniumPopup).click();
+    }
 
     //****Locators****
+    private By learnSeleniumPopup = By.cssSelector("#overlay > div > div.sc-gKsewC.gnwqMi > img");
     private By AbaProdutos = By.cssSelector("#app > div > header > nav > ul > li.menuDesktop__item.menuDesktop__item--produtos > a > span.menuDesktop__link__title");
     private By AbaBatePapo = By.cssSelector("#app > div > div.blackBar > div > ul.blackBar__listProducts > li:nth-child(2) > a");
     private By MenuSalas = By.cssSelector("#root > header > div:nth-child(3) > div.sc-giIncl.gHUUHu > ul > li:nth-child(1) > a");

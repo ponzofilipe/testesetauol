@@ -91,6 +91,7 @@ public class StepDefinitions {
     @Quando("seleciono area do bate-papo uol")
     public void selecionoAreaDoBatePapoUol() {
         menu.ClicaAbaBatePapo();
+        menu.closePopupBatePapo();
     }
     @Quando("seleciono salas")
     public void selecionoSalas() {
