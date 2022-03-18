@@ -11,6 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import system.helpers.DriverManager;
+import system.pages.ComunicarErrorPage;
 import system.pages.MainPage;
 import system.pages.MenuUolPage;
 import system.pages.ValorAssinaturaPage;
@@ -62,17 +63,20 @@ public class StepDefinitions {
 
 
     @Quando("preencho o formulário de {string}")
-    public void preenchoOFormulárioDe(String string) {
+    public void preenchoOFormulárioDe(String string) throws Exception {
         // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        MainPage page = new MainPage();
+        ComunicarErrorPage comunicarErro = new ComunicarErrorPage();
+        Thread.sleep(6000);
+        page.clicarBotaoComunicarErro();
+        comunicarErro.preencherFormulario();
     }
     @Então("exibe na tela mensagem de sucesso")
     public void exibeNaTelaMensagemDeSucesso() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        ComunicarErrorPage comunicarErro = new ComunicarErrorPage();
+        String mensagemExibida = comunicarErro.getMensagemSucesso();
+        comunicarErro.confirmarMensagemSucessoExibida(mensagemExibida);
     }
-
-
 
     @Quando("altero a previsão do tempo para a cidade {string}")
     public void alteroAPrevisãoDoTempoParaACidade(String string) {
