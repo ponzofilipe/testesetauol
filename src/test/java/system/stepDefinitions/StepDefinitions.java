@@ -107,10 +107,10 @@ public class StepDefinitions {
 //        String salasbatepapo = menu.GetVerificaSalasCat1();
         //assertEquals(salasbatepapo, "Camarote", "Categoria não encontrada");
     }
-    @Então("categorias")
-    public void categorias() {
-        String categoriabbb = menu.GetVerificaSalasCategorias();
-        assertEquals(categoriabbb, "Big Brother 22", "Sala não encontrada");
+    @Então("exibe uma opção de experimentar por sete dias gratis")
+    public void verificoplanogratis() {
+        String valor = menu.GetVerificaPlanoSeteDias();
+        assertEquals(valor, "Experimente 7 dias grátis", "Valor diferente do plano");
     }
 
 

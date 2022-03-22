@@ -29,6 +29,8 @@ public class MenuUolPage {
     private By SalasPopup = By.cssSelector("#overlay > div > div.sc-gKsewC.gnwqMi > img");
     private By SalasCategorias = By.cssSelector("#root > section > div > div:nth-child(3) > section.sc-kMOkjD.jZjyro > h2 > div");
     private By SalasCategorias2 = By.cssSelector("#root > section > div > div:nth-child(3) > section.sc-czgevV.giohnb > div:nth-child(1) > div.sc-bQVmPH.cROQXQ > div > h3");
+    private By ExperimenteporSeteDias = By.cssSelector("#beVipRightNow > div.sc-hlWvWH.dgxEoC > div.sc-gVgnHT.bfDGHw > a");
+
 
     public void ClicaAbaProdutos(){
         driver.findElement(AbaProdutos).click();
@@ -48,6 +50,7 @@ public class MenuUolPage {
         return driver.findElement(SalasCategorias).getText();
     }
     public String GetVerificaSalasCat1(){ return driver.findElement(SalasCategorias2).getText();}
+    public String GetVerificaPlanoSeteDias(){ return driver.findElement(ExperimenteporSeteDias).getText();}
 
     public String GetVerificaSalasCategorias(){
         return driver.findElement(SalasCategorias).getText();
