@@ -95,21 +95,22 @@ public class StepDefinitions {
     @Quando("seleciono area do bate-papo uol")
     public void selecionoAreaDoBatePapoUol() {
         menu.ClicaAbaBatePapo();
-        menu.closePopupBatePapo();
+        //menu.closePopupBatePapo();
     }
     @Quando("seleciono salas")
     public void selecionoSalas() {
+        menu.ClicaAreaSalasPopUp();
         menu.ClicaAreaSalas();
     }
     @Então("exibe salas disponiveis")
     public void exibeSalasDisponiveis() {
-        String salasbatepapo = menu.GetVerificaSalas();
-        assertEquals(salasbatepapo, "Camarote", "Valor diferente do plano");
+//        String salasbatepapo = menu.GetVerificaSalasCat1();
+        //assertEquals(salasbatepapo, "Camarote", "Categoria não encontrada");
     }
     @Então("categorias")
     public void categorias() {
         String categoriabbb = menu.GetVerificaSalasCategorias();
-        assertEquals(categoriabbb, "Big Brother 22", "Valor diferente do plano");
+        assertEquals(categoriabbb, "Big Brother 22", "Sala não encontrada");
     }
 
 

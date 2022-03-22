@@ -25,8 +25,10 @@ public class MenuUolPage {
     private By AbaProdutos = By.cssSelector("#app > div > header > nav > ul > li.menuDesktop__item.menuDesktop__item--produtos > a > span.menuDesktop__link__title");
     private By AbaBatePapo = By.cssSelector("#app > div > div.blackBar > div > ul.blackBar__listProducts > li:nth-child(2) > a");
     private By MenuSalas = By.cssSelector("#root > header > div:nth-child(3) > div.sc-giIncl.gHUUHu > ul > li:nth-child(1) > a");
-    private By Salas = By.cssSelector("#root > section > div > div:nth-child(3) > section.sc-czgevV.giohnb > div:nth-child(1) > div.sc-bQVmPH.cROQXQ > div > h3");
+    private By Salas = By.cssSelector("#root > header > div:nth-child(3) > div.sc-giIncl.gHUUHu > ul > li:nth-child(1) > a");
+    private By SalasPopup = By.cssSelector("#overlay > div > div.sc-gKsewC.gnwqMi > img");
     private By SalasCategorias = By.cssSelector("#root > section > div > div:nth-child(3) > section.sc-kMOkjD.jZjyro > h2 > div");
+    private By SalasCategorias2 = By.cssSelector("#root > section > div > div:nth-child(3) > section.sc-czgevV.giohnb > div:nth-child(1) > div.sc-bQVmPH.cROQXQ > div > h3");
 
     public void ClicaAbaProdutos(){
         driver.findElement(AbaProdutos).click();
@@ -38,10 +40,14 @@ public class MenuUolPage {
     public void ClicaAreaSalas(){
         driver.findElement(MenuSalas).click();
     }
+    public void ClicaAreaSalasPopUp(){
+        driver.findElement(SalasPopup).click();
+    }
 
     public String GetVerificaSalas(){
-        return driver.findElement(Salas).getText();
+        return driver.findElement(SalasCategorias).getText();
     }
+    public String GetVerificaSalasCat1(){ return driver.findElement(SalasCategorias2).getText();}
 
     public String GetVerificaSalasCategorias(){
         return driver.findElement(SalasCategorias).getText();
