@@ -11,10 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import system.helpers.DriverManager;
-import system.pages.ComunicarErrorPage;
-import system.pages.MainPage;
-import system.pages.MenuUolPage;
-import system.pages.ValorAssinaturaPage;
+import system.pages.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -79,14 +76,16 @@ public class StepDefinitions {
     }
 
     @Quando("altero a previsão do tempo para a cidade {string}")
-    public void alteroAPrevisãoDoTempoParaACidade(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void alteroAPrevisãoDoTempoParaACidade(String cidade) {
+        PrevisaoTempoMenuPage previsaoTempoMenuPage = new PrevisaoTempoMenuPage(this.driver, this.wait);
+        previsaoTempoMenuPage.clicarNoIconePesquisa();
+        previsaoTempoMenuPage.digitarNoInputPesquisaCidade(cidade);
+        previsaoTempoMenuPage.clicarNaCidade(cidade);
     }
     @Então("exibe a previsão do tempo de {string}")
-    public void exibeAPrevisãoDoTempoDe(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void exibeAPrevisãoDoTempoDe(String cidade) {
+        PrevisaoTempoMenuPage previsaoTempoMenuPage = new PrevisaoTempoMenuPage(this.driver, this.wait);
+        assertEquals(cidade, previsaoTempoMenuPage.obterNomeDaCidadeNaPrevisaoTempo());
     }
 
 
