@@ -23,12 +23,10 @@ public class MenuUolPage {
     //****Locators****
     private By learnSeleniumPopup = By.cssSelector("#overlay > div > div.sc-gKsewC.gnwqMi > img");
     private By AbaProdutos = By.cssSelector("#app > div > header > nav > ul > li.menuDesktop__item.menuDesktop__item--produtos > a > span.menuDesktop__link__title");
-<<<<<<< HEAD
     private By ValorAssinatura = By.cssSelector("#conteudo-exclusivo > section.top > div > div > div.item.destaque > div.price_plan");
     private By DivBotaoBusca = By.cssSelector("#app > div > header > div.searchHeader.headerDesktop__search > div");
     private By InputBuscaDados = By.cssSelector("#app > div > header > div.searchHeader.headerDesktop__search > form > div > div > input");
     private By ResultadoBusca = By.cssSelector("#uol");
-=======
     private By AbaBatePapo = By.cssSelector("#app > div > div.blackBar > div > ul.blackBar__listProducts > li:nth-child(2) > a");
     private By MenuSalas = By.cssSelector("#root > header > div:nth-child(3) > div.sc-giIncl.gHUUHu > ul > li:nth-child(1) > a");
     private By Salas = By.cssSelector("#root > header > div:nth-child(3) > div.sc-giIncl.gHUUHu > ul > li:nth-child(1) > a");
@@ -57,7 +55,6 @@ public class MenuUolPage {
     }
     public String GetVerificaSalasCat1(){ return driver.findElement(SalasCategorias2).getText();}
     public String GetVerificaPlanoSeteDias(){ return driver.findElement(ExperimenteporSeteDias).getText();}
->>>>>>> 90c2d0628ce542b4413be2342c5baf96b06e98f0
 
     public String GetVerificaSalasCategorias(){
         return driver.findElement(SalasCategorias).getText();
