@@ -24,6 +24,7 @@ public class MainPage {
     private By siteNameSeletor = By.cssSelector("#site-name");
     private By learnSeleniumPopup = By.cssSelector(".at-cm-no-button");
     private By botaoComunicarErro = By.cssSelector("#app > div > footer > nav > div.footer__error.footer__footerBar > button");
+    private By botaoOkAceitarCookies = By.cssSelector("body > div.banner-lgpd-consent-container > div > div:nth-child(2) > button");
     /*
      Interação
      */
@@ -46,7 +47,7 @@ public class MainPage {
             driver.findElement(botaoComunicarErro).click();
         }catch (Exception e){
             moverMouseParaFinalDaPagina();
-            closePopupSemanaDoConsumidor();
+            clicarBotaoOkAceitarCookies();
             driver.findElement(botaoComunicarErro).click();
         }
     }
@@ -59,10 +60,9 @@ public class MainPage {
         ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
     }
 
-    private void closePopupSemanaDoConsumidor(){
-        Actions mouse = new Actions(driver);
-        mouse.moveToElement(driver.findElement(By.cssSelector("#app > div > footer > nav > div.footer__error.footer__footerBar > button"))).build().perform();
-        mouse.moveToElement(driver.findElement(By.cssSelector("#second-frame > div:nth-child(2)"))).click().perform();
+    private void clicarBotaoOkAceitarCookies(){
+        wait.until(ExpectedConditions.visibilityOfElementLocated(botaoOkAceitarCookies));
+        driver.findElement(botaoOkAceitarCookies).click();
     }
 
     private void closePopup() {
