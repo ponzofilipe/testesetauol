@@ -6,7 +6,7 @@ Funcionalidade: Atividade de Avaliacao da disciplina de testes de sistemas
   Cenario: Atividade 01 - Alecsandro
     Dado que estou na tela inicial do UOL Notícias
     Quando realiza o busca pelo conteúdo "Brasil"
-    Então exibe tela com o resultado da busca
+    Então exibe tela de busca
 
   Cenario: Atividade 02 - Clarice
     Dado que estou na tela inicial do UOL Notícias

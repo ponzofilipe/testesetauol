@@ -42,19 +42,18 @@ public class StepDefinitions {
         MainPage page = new MainPage();
         page.acessar();
     }
+
     @Quando("realiza o busca pelo conteúdo {string}")
-    public void realizaOBuscaPeloConteúdo(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void realizaOBuscaPeloConteúdo(String string)  {
+        //Thread.sleep(1000);
+        menu.inputBuscaDados("Brasil");
     }
-    @Então("exibe tela com o resultado da busca")
+
+    @Então("exibe tela de busca")
     public void exibeTelaComOResultadoDaBusca() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        System.out.println(driver.getCurrentUrl());
+        assertEquals(driver.getCurrentUrl(),"https://www.uol.com.br/");
     }
-
-
-
 
     @Quando("preencho o formulário de {string}")
     public void preenchoOFormulárioDe(String string) {
@@ -67,8 +66,6 @@ public class StepDefinitions {
         throw new io.cucumber.java.PendingException();
     }
 
-
-
     @Quando("altero a previsão do tempo para a cidade {string}")
     public void alteroAPrevisãoDoTempoParaACidade(String string) {
         // Write code here that turns the phrase above into concrete actions
@@ -79,9 +76,6 @@ public class StepDefinitions {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
-
-
-
 
     @Quando("seleciono area do bate-papo uol")
     public void selecionoAreaDoBatePapoUol() {
@@ -104,9 +98,6 @@ public class StepDefinitions {
         throw new io.cucumber.java.PendingException();
     }
 
-
-
-
     @Quando("Verifico o valor da assinatura da pagina")
     public void verificoOValorDaAssinaturaDaPagina() {
         menu.ClicaAbaProdutos();
@@ -117,7 +108,5 @@ public class StepDefinitions {
         String valor = menu.GetValorAssinatura();
         assertEquals(valor, string, "Valor diferente do plano");
     }
-
-
 
 }
