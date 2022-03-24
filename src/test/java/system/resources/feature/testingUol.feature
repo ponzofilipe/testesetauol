@@ -23,7 +23,7 @@ Funcionalidade: Atividade de Avaliacao da disciplina de testes de sistemas
     Quando seleciono area do bate-papo uol
     E seleciono salas
     Então exibe salas disponiveis
-    E categorias
+    E exibe uma opção de experimentar por sete dias gratis
 
   Cenario: Atividade 05 - eric
     Dado que estou na tela inicial do UOL Notícias

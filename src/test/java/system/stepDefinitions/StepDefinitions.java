@@ -11,8 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import system.helpers.DriverManager;
-import system.pages.MainPage;
-import system.pages.MenuUolPage;
+import system.pages.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -36,6 +35,10 @@ public class StepDefinitions {
     }
 
     MenuUolPage menu = new MenuUolPage();
+    ValorAssinaturaPage valorAssinaturaPage = new ValorAssinaturaPage();
+
+
+    ///***Cenarios***
 
     @Dado("que estou na tela inicial do UOL Notícias")
     public void queEstouNaTelaInicialDoUOLNotícias() {
@@ -56,46 +59,53 @@ public class StepDefinitions {
     }
 
     @Quando("preencho o formulário de {string}")
-    public void preenchoOFormulárioDe(String string) {
+    public void preenchoOFormulárioDe(String string) throws Exception {
         // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        MainPage page = new MainPage();
+        ComunicarErrorPage comunicarErro = new ComunicarErrorPage();
+        Thread.sleep(6000);
+        page.clicarBotaoComunicarErro();
+        comunicarErro.preencherFormulario();
     }
     @Então("exibe na tela mensagem de sucesso")
     public void exibeNaTelaMensagemDeSucesso() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        ComunicarErrorPage comunicarErro = new ComunicarErrorPage();
+        String mensagemExibida = comunicarErro.getMensagemSucesso();
+        comunicarErro.confirmarMensagemSucessoExibida(mensagemExibida);
     }
 
     @Quando("altero a previsão do tempo para a cidade {string}")
-    public void alteroAPrevisãoDoTempoParaACidade(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void alteroAPrevisãoDoTempoParaACidade(String cidade) {
+        PrevisaoTempoMenuPage previsaoTempoMenuPage = new PrevisaoTempoMenuPage(this.driver, this.wait);
+        previsaoTempoMenuPage.clicarNoIconePesquisa();
+        previsaoTempoMenuPage.digitarNoInputPesquisaCidade(cidade);
+        previsaoTempoMenuPage.clicarNaCidade(cidade);
     }
     @Então("exibe a previsão do tempo de {string}")
-    public void exibeAPrevisãoDoTempoDe(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void exibeAPrevisãoDoTempoDe(String cidade) {
+        PrevisaoTempoMenuPage previsaoTempoMenuPage = new PrevisaoTempoMenuPage(this.driver, this.wait);
+        assertEquals(cidade, previsaoTempoMenuPage.obterNomeDaCidadeNaPrevisaoTempo());
     }
 
     @Quando("seleciono area do bate-papo uol")
     public void selecionoAreaDoBatePapoUol() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        menu.ClicaAbaBatePapo();
+        //menu.closePopupBatePapo();
     }
     @Quando("seleciono salas")
     public void selecionoSalas() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        menu.ClicaAreaSalasPopUp();
+        menu.ClicaAreaSalas();
     }
     @Então("exibe salas disponiveis")
     public void exibeSalasDisponiveis() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+//        String salasbatepapo = menu.GetVerificaSalasCat1();
+        //assertEquals(salasbatepapo, "Camarote", "Categoria não encontrada");
     }
-    @Então("categorias")
-    public void categorias() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @Então("exibe uma opção de experimentar por sete dias gratis")
+    public void verificoplanogratis() {
+        String valor = menu.GetVerificaPlanoSeteDias();
+        assertEquals(valor, "Experimente 7 dias grátis", "Valor diferente do plano");
     }
 
     @Quando("Verifico o valor da assinatura da pagina")
@@ -105,7 +115,7 @@ public class StepDefinitions {
 
     @Então("devo visualizar a assinatura promocional a {string}")
     public void devoVisualizarAAssinaturaPromocionalA(String string) {
-        String valor = menu.GetValorAssinatura();
+        String valor = valorAssinaturaPage.GetValorAssinatura();
         assertEquals(valor, string, "Valor diferente do plano");
     }
 
